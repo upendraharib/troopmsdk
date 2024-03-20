@@ -1,0 +1,3 @@
+rootProject.name = "TrooponPrime"
+include ':app'
+include ':trooponprem'

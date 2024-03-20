@@ -1,0 +1,118 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'kotlin-parcelize'
+    id 'maven-publish'
+}
+
+android {
+    namespace 'com.tvisha.trooponprime'
+    compileSdk 34
+
+    defaultConfig {
+        minSdk 21
+        targetSdk 34
+        multiDexEnabled true
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        ndk.abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled(true)
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    externalNativeBuild {
+        ndkBuild {
+            path 'src/main/jni/Android.mk'
+        }
+    }
+
+}
+publishing {
+    publications{
+        bar(MavenPublication){
+            groupId "com.tvisha"
+            artifactId "troopsdk"
+            version "0.1-alpha"
+            artifact("$buildDir/output/aar/troopsdk.aar")
+        }
+    }
+    repositories {
+        maven {
+            name ="com.tvisha.troopsdk"
+            uri("https://maven.pkg.github.com/users/upendraharib/troopsdk")
+            credentials{
+                username = System.getenv("GITHUB_USER")
+                password = System.getenv("GITHUB_TOKEN")
+            }
+        }
+
+    }
+}
+
+
+dependencies {
+//socket
+    api('io.socket:socket.io-client:1.0.0') {
+        exclude group: 'org.json', module: 'json'
+    }
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    def room_version = "2.6.1"
+    //room database
+    api("androidx.room:room-runtime:$room_version")
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+    api("androidx.room:room-ktx:$room_version")
+    testImplementation "androidx.room:room-testing:$room_version"
+    api('androidx.room:room-paging:2.6.1')
+    //okhttp
+    api('com.squareup.okhttp3:logging-interceptor:4.9.3')
+    api('com.squareup.okhttp3:okhttp:4.11.0')
+    //retrofit
+    api('com.google.code.gson:gson:2.10.1')
+    api('com.squareup.retrofit2:retrofit:2.9.0')
+    api('com.squareup.retrofit2:converter-gson:2.9.0')
+    api('com.squareup.retrofit2:converter-scalars:2.9.0')
+
+    // ViewModel Compose
+    api("androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0")
+
+    implementation 'com.android.support:multidex:1.0.3'
+
+
+
+    api('io.github.haiyangwu:mediasoup-client:3.4.0')
+    api("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1")
+    api('com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2')
+
+
+
+//key
+    api("com.madgag.spongycastle:core:1.58.0.0")
+    api("com.madgag.spongycastle:prov:1.58.0.0")
+
+}
+/*
+afterEvaluate {
+    publishing {
+        publications {
+            library(MavenPublication) {
+                setGroupId
+            }
+        }
+    }
+}*/

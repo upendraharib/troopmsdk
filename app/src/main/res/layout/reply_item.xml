@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/clReplyHolder"
+    app:layout_constraintEnd_toEndOf="parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="@dimen/_3sdp"
+    android:elevation="@dimen/_2sdp"
+    android:background="@color/design_default_color_background"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView
+        android:textStyle="bold"
+        android:textColor="@color/entity_name_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/tvReplyUserName"
+        android:layout_width="wrap_content"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:textAlignment="viewStart"
+        android:text="Upendrahari"
+        android:padding="@dimen/_2sdp"
+        android:textSize="@dimen/_10ssp"
+        android:layout_height="wrap_content"/>
+    <ImageView
+
+        android:padding="@dimen/_5sdp"
+        android:id="@+id/ivReplyAttachment"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvReplyUserName"
+        android:src="@drawable/default_user"
+        android:layout_width="@dimen/_36sdp"
+        android:layout_height="@dimen/_36sdp"/>
+
+    <TextView
+        app:layout_constraintTop_toBottomOf="@+id/tvReplyUserName"
+        app:layout_constraintStart_toEndOf="@+id/ivReplyAttachment"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/repliedMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:paddingEnd="@dimen/_8sdp"
+        android:textAlignment="viewStart"
+        android:maxLines="2"
+        android:text="Hi Hello"
+        android:textColor="@color/group_member_color"
+        android:drawablePadding="@dimen/_3sdp"
+        android:ellipsize="end"
+        android:layout_gravity="center"
+        android:minWidth="@dimen/_80sdp"
+        android:textSize="@dimen/_10ssp"
+        tools:ignore="RtlCompat" />
+</androidx.constraintlayout.widget.ConstraintLayout>

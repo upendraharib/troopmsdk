@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout   xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data class="GroupPickedItemAdapterBinding">
+        <variable
+            name="contact"
+            type="com.tvisha.trooponprime.lib.clientModels.UserClientModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:padding="@dimen/_8sdp"
+        android:layout_margin="@dimen/_8sdp"
+        android:elevation="@dimen/_5sdp"
+        android:background="@drawable/user_item_bg"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/ivEntityProfile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:src="@drawable/default_user"
+            android:background="@drawable/circl_bg"
+            android:layout_width="@dimen/_36sdp"
+            android:layout_height="@dimen/_36sdp"/>
+        <TextView
+            android:layout_marginTop="@dimen/_5sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivEntityProfile"
+            android:textStyle="bold"
+            android:text="Upendra"
+            android:gravity="center"
+            android:id="@+id/tvEntityName"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textSize="@dimen/_11ssp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:textColor="@color/entity_name_color"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

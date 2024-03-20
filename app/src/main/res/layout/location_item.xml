@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/_180sdp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ImageView
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/ivMapView"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/map_icon"
+        android:layout_width="@dimen/_180sdp"
+        android:layout_height="@dimen/_140sdp"/>
+
+    <LinearLayout
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivMapView"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tvLocationName"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:paddingEnd="@dimen/_8sdp"
+            android:textAlignment="viewStart"
+            android:text="jammalamadugu"
+            android:textColor="@color/entity_name_color"
+            android:ellipsize="end"
+            android:layout_gravity="center"
+            android:minWidth="@dimen/_80sdp"
+            android:textSize="@dimen/_10ssp"
+            tools:ignore="RtlCompat" />
+        <TextView
+            app:layout_constraintTop_toBottomOf="@+id/tvContactName"
+            app:layout_constraintStart_toEndOf="@+id/ivContactProfile"
+            android:id="@+id/tvLocationAddress"
+            android:textStyle="normal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:paddingEnd="@dimen/_8sdp"
+            android:textAlignment="viewStart"
+            android:maxLines="2"
+            android:text="Tvisha Technologies pvt ltd, Madhapur 500008"
+            android:textColor="@color/group_member_color"
+            android:drawablePadding="@dimen/_3sdp"
+            android:ellipsize="end"
+            android:layout_gravity="center"
+            android:minWidth="@dimen/_80sdp"
+            android:textSize="@dimen/_10ssp"
+            tools:ignore="RtlCompat" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

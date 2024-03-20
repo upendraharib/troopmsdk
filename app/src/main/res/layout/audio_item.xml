@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/_180sdp"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@android:color/holo_blue_light"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView
+        app:layout_constraintTop_toTopOf="parent"
+        android:padding="@dimen/_5sdp"
+        android:id="@+id/ivPlayPauseButton"
+        app:layout_constraintStart_toStartOf="parent"
+        android:src="@android:drawable/ic_media_play"
+        android:background="@color/message_color"
+        android:layout_width="@dimen/_36sdp"
+        android:layout_height="@dimen/_36sdp"/>
+    <LinearLayout
+        app:layout_constraintTop_toTopOf="@+id/ivPlayPauseButton"
+        app:layout_constraintBottom_toBottomOf="@+id/ivPlayPauseButton"
+        app:layout_constraintStart_toEndOf="@+id/ivPlayPauseButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tvAudioTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="viewStart"
+            android:text="04:10"
+            android:gravity="center"
+            android:textColor="@color/group_member_color"
+            android:textSize="@dimen/_10ssp"
+            tools:ignore="RtlCompat" />
+        <SeekBar
+            android:id="@+id/audioProgress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:thumb="@drawable/seek_thumb"
+            android:progressDrawable="@drawable/seek_bar"/>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

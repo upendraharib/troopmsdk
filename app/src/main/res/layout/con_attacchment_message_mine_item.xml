@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:paddingStart="@dimen/_24sdp"
+        android:layout_margin="@dimen/_5sdp"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:padding="@dimen/_2sdp"
+            android:background="@drawable/mine_conv_bg"
+            android:paddingStart="@dimen/_4sdp"
+            android:paddingEnd="@dimen/_12sdp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:orientation="vertical"
+            android:id="@+id/messageContainer"
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:gravity="end">
+            <include
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:id="@+id/moreFeatures"
+                layout="@layout/feature_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <include
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/moreFeatures"
+                android:id="@+id/clReply"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                layout="@layout/reply_item"/>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/clReply"
+                android:id="@+id/clAttachment"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_200sdp">
+                <ImageView
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:id="@+id/ivVideoButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:padding="@dimen/_16sdp"
+                    android:visibility="gone"
+                    app:srcCompat="@drawable/ic_video_bg" />
+                <ImageView
+                    android:id="@+id/ivAttachment"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:src="@drawable/attachment_pin_icon"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+
+                app:layout_constraintTop_toBottomOf="@+id/clAttachment"
+                android:id="@+id/clMessageViewBox"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:minWidth="@dimen/_72sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.tvisha.trooponprime.customview.ImFlexboxLayout
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_width="match_parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|bottom"
+                    android:gravity="end"
+                    app:viewPartMain="@+id/txtMsg"
+                    app:viewPartSlave="@+id/lytStatusContainer"
+                    tools:ignore="MissingConstraints">
+
+                    <TextView
+                        android:id="@+id/txtMsg"
+                        android:minWidth="@dimen/_120sdp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:text=""
+                        android:textSize="@dimen/_11ssp"
+                        android:textColor="@color/message_color"
+                        android:layout_marginEnd="@dimen/_2sdp"
+                        android:layout_marginBottom="@dimen/_3sdp"
+                        android:drawablePadding="@dimen/_3sdp"
+                        android:paddingStart="@dimen/_8sdp"
+                        android:paddingEnd="@dimen/_5sdp" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+
+                        android:id="@+id/lytStatusContainer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:gravity="end|bottom">
+
+                        <include
+
+                            android:id="@+id/messageTimeView"
+                            layout="@layout/item_chat_time_status_mine"
+                            tools:ignore="TooDeepLayout" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </com.tvisha.trooponprime.customview.ImFlexboxLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

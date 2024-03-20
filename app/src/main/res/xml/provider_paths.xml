@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <external-path name="/storage/emulated/0" path="."/>
+    <root-path name="root" path="." />
+    <files-path name="files" path="."/>
+</paths>
+<!--<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    &lt;!&ndash;<external-path name="media" path="."/>
+        <root-path name="external_files" path="/storage/" />&ndash;&gt;
+    <external-path name="storage/emulated/0" path="."/>
+    &lt;!&ndash;<external-files-path name="external_files" path="/" />&ndash;&gt;
+    &lt;!&ndash;<external-path
+        name="external"
+        path="." />
+    <external-files-path
+        name="storage/emulated/0"
+        path="." />
+    <cache-path
+        name="cache"
+        path="." />
+    <external-cache-path
+        name="external_cache"
+        path="." />
+    <files-path
+        name="files"
+        path="." />&ndash;&gt;
+</paths>-->
+<!--<paths>
+    <external-path
+        name="external"
+        path="." />
+    <external-files-path
+        name="external_files"
+        path="." />
+    <cache-path
+        name="cache"
+        path="." />
+    <external-cache-path
+        name="external_cache"
+        path="." />
+    <files-path
+        name="files"
+        path="." />
+</paths>-->

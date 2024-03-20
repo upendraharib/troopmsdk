@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clActionBar"
+        android:background="@color/colorPrimary"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+        <ImageView
+            app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/ivBack"
+            android:src="@drawable/ic_back"
+            android:padding="@dimen/_14sdp"
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="match_parent"/>
+        <TextView
+            android:layout_marginTop="@dimen/_5sdp"
+            android:id="@+id/tvCreateGroup"
+            android:textStyle="normal"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintStart_toEndOf="@+id/ivBack"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="Create Group"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            app:layout_constraintTop_toBottomOf="@+id/tvCreateGroup"
+            android:textStyle="normal"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintStart_toEndOf="@+id/ivBack"
+            android:text="10 members"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+        <TextView
+            android:id="@+id/tvNext"
+            android:layout_margin="@dimen/_8sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textStyle="normal"
+            android:background="@drawable/button_bg"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="Create"
+            android:paddingStart="@dimen/_24sdp"
+            android:paddingEnd="@dimen/_24sdp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:layout_marginTop="@dimen/_8sdp"
+        android:id="@+id/ivPicGroup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clActionBar"
+        android:src="@drawable/default_user"
+        android:layout_width="@dimen/_64sdp"
+        android:background="@drawable/circl_bg"
+        android:layout_height="@dimen/_64sdp"/>
+    <EditText
+        android:id="@+id/etGroupName"
+        app:layout_constraintTop_toBottomOf="@+id/ivPicGroup"
+        android:hint="Group Name"
+        android:textSize="@dimen/_11ssp"
+        android:textColor="@color/message_color"
+        android:layout_margin="@dimen/_5sdp"
+        android:background="@android:drawable/edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:id="@+id/etGroupDescription"
+        app:layout_constraintTop_toBottomOf="@+id/etGroupName"
+        android:hint="Group Description"
+        android:textSize="@dimen/_11ssp"
+        android:gravity="start"
+        android:textColor="@color/message_color"
+        android:layout_margin="@dimen/_5sdp"
+        android:background="@android:drawable/edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_80sdp"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="@dimen/_5sdp"
+        android:id="@+id/userList"
+        android:padding="@dimen/_8sdp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="4"
+        app:layout_constraintTop_toBottomOf="@+id/etGroupDescription"
+        android:src="@android:drawable/btn_star_big_on"
+        tools:listitem="@layout/group_picked_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

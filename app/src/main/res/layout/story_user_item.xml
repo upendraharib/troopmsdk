@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout   xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data class="StoryListItemAdapterBinding">
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_52sdp">
+    <ImageView
+        android:layout_marginStart="@dimen/_5sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/ivEntityProfile"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/default_user"
+        android:background="@drawable/circl_bg"
+        android:layout_width="@dimen/_24sdp"
+        android:layout_height="@dimen/_24sdp"/>
+    <TextView
+        android:layout_marginTop="@dimen/_10sdp"
+        android:textStyle="bold"
+        android:id="@+id/tvEntityName"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:text="Name"
+        android:textSize="@dimen/_11ssp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="@dimen/_10sdp"
+        app:layout_constraintStart_toEndOf="@+id/ivEntityProfile"
+        android:textColor="@color/entity_name_color"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"/>
+    <TextView
+        app:layout_constraintTop_toBottomOf="@+id/tvEntityName"
+        android:textStyle="italic"
+        android:id="@+id/tvStatusTime"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:text="5 mins"
+        android:textSize="@dimen/_9ssp"
+        android:layout_marginStart="@dimen/_10sdp"
+        app:layout_constraintStart_toEndOf="@+id/ivEntityProfile"
+        android:textColor="@color/entity_name_color"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"/>
+    <ImageView
+        android:id="@+id/ivDelete"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ivRead"
+        android:src="@drawable/delete_small"
+        android:padding="@dimen/_8sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:tint="@android:color/holo_red_light" />
+    <ImageView
+        android:id="@+id/ivRead"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/view"
+        android:padding="@dimen/_8sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:tint="@android:color/holo_green_dark"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
