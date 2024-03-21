@@ -4,7 +4,7 @@
     http://maven.apache.org/xsd/maven-4.0.0.xsd"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.github.upendraharib</groupId>
+    <groupId>com.tvisha</groupId>
     <artifactId>troopmsdk</artifactId>
     <version>0.5-alpha</version>
     <packaging>pom</packaging>
